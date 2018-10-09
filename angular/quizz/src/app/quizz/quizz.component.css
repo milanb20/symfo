@@ -1,0 +1,27 @@
+.quizz-form, .quizz-result {
+  margin: auto;
+  width: 300px;
+  margin-top: 40px
+}
+
+.not-visible {
+  display: none
+}
+
+.quizz {
+  margin: auto;
+  width: 600px;
+  margin-top: 40px
+}
+
+ul.choices li {
+  cursor: pointer
+}
+
+li.selected {
+  font-weight: bold;
+  color: blue
+}
+
+
+/* */

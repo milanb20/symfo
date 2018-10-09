@@ -1,0 +1,66 @@
+<!-- Formulaire pour générer un QCM -->
+<div class="quizz-form" [ngClass]="{'not-visible': isQcmReceived}">
+
+  <div class="form-group">
+    <select [(ngModel)]="selectCategory" class="form-control">
+      <option value="0">Choisir une catégorie</option>
+      <option
+        *ngFor="let category of categories"
+        value="{{category.id}}">{{category.label}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select [(ngModel)]="selectDifficulty" class="form-control">
+      <option value="0">Choisir un niveau de difficulté</option>
+      <option
+        *ngFor="let difficulty of difficulties"
+        value="{{difficulty.id}}">{{difficulty.label}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="nbQuestions"
+      [(ngModel)]="nbQuestions"
+      class="form-control"
+      placeholder="Nombre de questions">
+  </div>
+
+  <button
+    (click)="submit()"
+    class="btn btn-primary"
+    type="button">Lancer le QCM</button>
+
+</div>
+
+<!-- Affichage du QCM -->
+<div
+  *ngIf="questions.length > 0 && !isQcmCompleted"
+  class="quizz" >
+  <span>Question {{ indexQuestion + 1 }} sur {{questions.length}}</span>
+  <h3>{{ questions[indexQuestion].label }}</h3>
+
+  <ul #choice_list class="choices">
+    <li #choice_list_item
+      (click)="makeChoice(choice, choice_list, choice_list_item)"
+      *ngFor="let choice of questions[indexQuestion].choices">
+    {{choice.label}}
+    </li>
+  </ul>
+
+  <button
+    (click)="validQuestion()"
+    [disabled]="btnValidDisabled"
+    class="btn btn-primary">Valider</button>
+</div>
+
+<!-- Affichage du score -->
+<div class="quizz-result"
+  [ngClass]="{'not-visible':!isQcmCompleted}">
+  <h2>Score: {{score}} / {{questions.length}}</h2>
+  <button
+    class="btn btn-primary"
+    (click)="reset()">Rejouer</button>
+</div>
+
+<!-- -->
