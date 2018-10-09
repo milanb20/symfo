@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<form method="post" action="/login-process">
+  <input type="email" name="email">
+  <input type="password" name="password">
+  <input type="submit" name="submit" value="Valider">
+</form>
+{% endblock %}

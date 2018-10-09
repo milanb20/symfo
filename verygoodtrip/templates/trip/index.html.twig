@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trip index{% endblock %}
+
+{% block body %}
+    <h1>Liste des voyages</h1>
+
+    <a
+      class="btn btn-primary btn-sm"
+      href="{{ path('trip_new') }}">Ajouter un voyage</a>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Intitulé</th>
+                <th>Destination</th>
+                <th>Dates</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for trip in trips %}
+            <tr>
+                <td>{{ trip.title }}</td>
+                <td>{{ trip.country.name }}</td>
+                <td>
+                  Du {{ trip.dateStart ? trip.dateStart|date('d/m/Y') : '' }}
+                  au {{ trip.dateEnd ? trip.dateEnd|date('d/m/Y') : '' }}
+                </td>
+                <td>{{ trip.price }} euros</td>
+                <td>
+                    <a href="{{ path('trip_show', {'id': trip.id}) }}">Détails</a>
+                    <a href="{{ path('trip_edit', {'id': trip.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun voyage enregistré</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

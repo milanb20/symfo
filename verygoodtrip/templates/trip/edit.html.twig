@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Trip{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h3>Modifier le voyage</h3>
+          {{ include('trip/_form.html.twig', {'button_label': 'Update'}) }}
+          <a href="{{ path('trip_index') }}">Retour à la liste</a>
+          {{ include('trip/_delete_form.html.twig') }}
+        </div>
+
+        <div class="col-md-6">
+          <h3>Ajouter une photo</h3>
+          {{ include('picture/new.html.twig') }}
+
+          {% if trip.pictures | length > 0 %}
+            {% for picture in trip.pictures %}
+
+              <img
+                style="width:100px"
+                src="/uploads/pictures/{{picture.path}}" alt="">
+            {% endfor %}
+
+          {% else %}
+            Aucune photo pour ce voyage
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
