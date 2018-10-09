@@ -1,0 +1,27 @@
+*** Créer une application "proverbApp" full-stack ***
+
+Front
+Une SPA avec un bouton "Charger un proverbe"
+Le clic affichera un proverbe de manière aléatoire
+
+Back
+Administrer des proverbes/citations avec Symfony.
+
+Un proverbe aura:
+- un intitulé (title)
+- un auteur (exemple: Platon)
+- une catégorie (exemple: Amour)
+
+Prévoir deux entités: Proverb, Category
+Faire le crud des deux entités
+
+** Variante: chargement automatique **
+Ajouter un menu déroulant contenant l'ensemble des catégories, un champ permettant de saisir un nombre de secondes (intervalle) ainsi qu'une case à cocher "auto".
+ - Etat coché: on déclenche une méthode qui demande au serveur un nouveau proverbe (de la catégorie sélectionnée) toutes les n secondes. Le champ de saisi ne peut plus être édité. (désactivé)
+ - Etat décoché: l'intervalle est arrêté. Le champ redevient éditable.
+L'intervalle accepté sera compris entre 10 secondes et 5 minutes.
+Si le nombre de secondes saisi n'est pas valide :
+- le client est informé (message dans l'interface)
+- la méthode d'interrogation n'est pas déclenchée.
+Pour la gestion de l'intervalle, utiliser les natives JS:
+setInterval et clearInterval

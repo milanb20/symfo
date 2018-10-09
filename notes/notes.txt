@@ -1,0 +1,18 @@
+﻿site basique (vitrine, petite association)
+  -> Wordpress || natif (from scratch)
+site intermédiaire + (sections dynamiques, statistiques, interface admin)
+  -> CMS (ex: Drupal, Joomla, Typo3) || Framework (Symfony, Laravel, CodeIgniter, CakePHP, Zend)
+
+Exemple: Blablacar
+V1 : natif
+v2 : symfony
+
+Bas niveau -> Haut niveau
+Natif < Framework (symfony) < CMS (Drupal)
+
+Bas niveau:
+- Plus de liberté
+- Moins de fonctionnalités préçoncues
+
+https://getcomposer.org/download/
+composer create-project symfony/website-skeleton my_project

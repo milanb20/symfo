@@ -1,0 +1,15 @@
+# Démarrer serveur
+php bin/console server:run
+
+# Créer une entité
+php bin/console make:entity
+
+# Générer base de données à partir du fichier .env
+php bin/console doctrine:database:create
+
+# Pour mettre à jour la base de données
+# Générer une version (migration)
+php bin/console make:migration
+
+# Executer les requêtes de mise à jour
+php bin/console doctrine:migrations:migrate

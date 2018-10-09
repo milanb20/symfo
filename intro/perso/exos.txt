@@ -1,0 +1,33 @@
+******
+Créer une route /bravo qui retournera au client le texte:
+ "Le routage Symfony est excellent !"
+******
+
+******
+ Sur la page player afficher les infos manquantes:
+ - le numéro de maillot
+ - Titulaire ou Remplaçant
+
+ Afficher la photo du joueur
+ (modifier la source de données en ajoutant
+ une clé photo à chaque joueur)
+******
+
+
+******
+Créer une entité Team avec les champs suivants:
+name, coach, foundationYear
+
+Ajouter un controller TeamController pour gérer
+les routes liées à l'entité Team
+
+Ajouter une route /teamForm proposant
+un formulaire d'ajout d'une équipe.
+Traiter l'envoi du formulaire
+
+Ajouter une route /teams qui affichera la liste des équipes
+enregistrées, sous forme de tableau
+
+Ajouter les liens vers ces nouvelles routes dans le
+menu principal
+******

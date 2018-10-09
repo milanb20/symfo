@@ -1,0 +1,11 @@
+# Créer un projet
+ng new [nom]
+
+# Démarre un serveur de développement
+ng serve
+
+# Génère un composant [nom]Component
+ng g c [nom]
+
+# Génère un service [nom]Service
+ng g s [nom]

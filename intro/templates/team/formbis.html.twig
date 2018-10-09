@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block body %}
+
+{% if teamExist %}
+  <div class="alert alert-danger">
+    Cette équipe existe déjà dans la base !
+  </div>
+{% endif %}
+
+<div class="container">
+
+{#
+  pour une mise en basique (sans stylisation bootstrap par exemple)
+  le code suivant suivant suffit:
+  form_start(form)
+  form_end(form)
+#}
+
+{{ form_start(form) }}
+
+  <div class="row">
+    <div class="col-md-4">
+      <span class="text-danger">
+        {{form_errors(form.name)}}
+      </span>
+      {{ form_label(form.name) }}
+      {{ form_widget(form.name) }}
+    </div>
+    <div class="col-md-4">
+      {{ form_label(form.coach) }}
+      {{ form_widget(form.coach) }}
+    </div>
+    <div class="col-md-4">
+      {# form_label(form.foundationYear) #}
+      <span>{{ labels_fr.foundationYear }}</span>
+      {{ form_widget(form.foundationYear) }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{ form_widget(form.submit,
+          {'attr': {'class': 'btn btn-primary'}}) }}
+    </div>
+  </div>
+
+
+{{ form_end(form) }}
+
+</div>
+
+{% endblock %}

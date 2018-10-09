@@ -1,0 +1,39 @@
+index:
+  path: /
+  controller: App\Controller\DefaultController::index
+
+home:
+  path: /home
+  controller: App\Controller\DefaultController::home
+
+bravo:
+  path: /bravo
+  controller: App\Controller\DefaultController::bravo
+
+demo:
+  path: /demo
+  controller: App\Controller\DemoController::index
+
+player:
+  path: /player/{id}
+  controller: App\Controller\DemoController::player
+
+players:
+  path: /players
+  controller: App\Controller\DemoController::players
+
+player_form:
+  path: /playerform
+  controller: App\Controller\DemoController::playerForm
+
+team_form:
+  path: /teamform
+  controller: App\Controller\TeamController::teamForm
+
+team_form_bis:
+  path: /teamformbis
+  controller: App\Controller\TeamController::teamFormBis
+
+teams:
+  path: /teams
+  controller: App\Controller\TeamController::teams

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+<ul>
+  {% for player in players2 %}
+    {% if player.team %}
+      <li>{{player.name}} ({{player.team.name}})</li>
+    {% else %}
+      <li>{{player.name}} (sans club)</li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<select>
+  {% for player in players %}
+  <option>{{player.name}}</option>
+  {% endfor %}
+</select>
+{% endblock %}

@@ -1,0 +1,15 @@
+header {
+  background-color: #ddd;
+  margin-bottom: 20px;
+  padding:4px
+}
+
+footer {
+  margin-top: 40px;
+  background-color: #444;
+  font-size: .7em
+}
+
+footer a {
+  color: white
+}
